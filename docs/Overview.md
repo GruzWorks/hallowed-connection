@@ -34,6 +34,6 @@ gniazdka.
 
 ##### Wymagania niefunkcjonalne 
 
--System powinien pracować na systemie android z nowoczesnym graficznym interfejsem użytkownika.
--System powinien się rozwijać, docelowo możliwość rozbudowny na aplikację webową.
+- System powinien pracować na systemie android z nowoczesnym graficznym interfejsem użytkownika.
+- System powinien się rozwijać, docelowo możliwość rozbudowny na aplikację webową.
 
