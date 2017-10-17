@@ -17,3 +17,23 @@ Pojedynczy schemat rozmieszczenia gniazdek reprezentowany jest przez nazwę czę
 Schematy rozmieszczenia gniazdek grupowane są w budynki, które z kolei opisane są przez nazwę, lokalizację geograficzną i opcjonalnie adres.
 
 Niektóre budynki są zbyt małe (lub ich ogólnodostępna część jest zbyt mała), aby dzielić je na części i przechowywać osobne schematy. W takim wypadku do budynku przypisany jest tylko jeden schemat o pustej nazwie, a aplikacja od razu wyświetla ten schemat bezpośrednio po wybraniu budynku.
+
+##### Przepisy
+
+Osoby biorące udział w dodawaniu nowych lokalizacji gniazdek elektrycznych nie będą pociągane do odpowiedzialności prawnej
+za nieprawdziwe lub niedokładne informacje.
+
+##### Wymagania funkcjonalne
+
+- Użytkownik musi mieć dostęp do prostych narzędzi rysowania, w celu zaznaczenia przybliżonej lokalizacji gniazdka eletkrycznego.
+- Użytkownik powinien być w stanie sprawdzić dostępne gniazdka elektryczne w pobliżu swojej lokalizacji.
+- Użytkownik powinien mieć możliwość oceny dodanego już gniazdka oraz dodania komentarza opisującego problem w przypadku
+wystawienia negatywnej oceny.
+- Użytkownik powinien być w stanie łatwo edytować informacje gniazdka w przypadku zmiany położenia lub też zmiany dostępności
+gniazdka.
+
+##### Wymagania niefunkcjonalne 
+
+-System powinien pracować na systemie android z nowoczesnym graficznym interfejsem użytkownika.
+-System powinien się rozwijać, docelowo możliwość rozbudowny na aplikację webową.
+
