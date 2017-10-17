@@ -20,8 +20,7 @@ Niektóre budynki są zbyt małe (lub ich ogólnodostępna część jest zbyt ma
 
 ##### Przepisy
 
-Osoby biorące udział w dodawaniu nowych lokalizacji gniazdek elektrycznych nie będą pociągane do odpowiedzialności prawnej
-za nieprawdziwe lub niedokładne informacje.
+Uzupełnianie bazy o aktualne informacje ma być zadaniem użytkowników, podobnie jak wiki.
 
 ##### Wymagania funkcjonalne
 
@@ -34,6 +33,6 @@ gniazdka.
 
 ##### Wymagania niefunkcjonalne 
 
-- System powinien pracować na systemie android z nowoczesnym graficznym interfejsem użytkownika.
-- System powinien się rozwijać, docelowo możliwość rozbudowny na aplikację webową.
+- Aplikacja powinien pracować na systemie mobilnym (android), z nowoczesnym graficznym interfejsem użytkownika.
+- Aplikacja powinna być rozbudowywalna, docelowo możliwość rozszerzenia o aplikację webową.
 
