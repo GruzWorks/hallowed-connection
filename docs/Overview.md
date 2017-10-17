@@ -34,5 +34,5 @@ gniazdka.
 ##### Wymagania niefunkcjonalne 
 
 - Aplikacja powinien pracować na systemie mobilnym (android), z nowoczesnym graficznym interfejsem użytkownika.
-- Aplikacja powinna być rozbudowywalna, docelowo możliwość rozszerzenia o aplikację webową.
+- Aplikacja powinna być rozbudowywalna, docelowo możliwość rozszerzenia o wersję webową.
 
