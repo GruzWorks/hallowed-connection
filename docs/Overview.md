@@ -8,6 +8,12 @@ Projektowane oprogramowanie ma na celu ułatwienie znajdywania gniazdek elektryc
 
 Baza lokalizacji gniazdek wraz ze schematami powinna być powiększana przez użytkowników, bezpośrednio w tej samej aplikacji.
 
+##### Zasoby ludzkie
+
+Aplikacja ma być dostępna do powszechnego użytku przez dowolne osoby, w dowolnym miejscu na świecie. Zwykli użytkownicy nie mogą mieć dostępu do administracyjnych funkcjonalności aplikacji - te mają być zarezerwowane dla twórców i osób specjalnie przez nich wyznaczonych.
+
+Na dalszym etapie rozwoju aplikacji przewidywana jest konieczność zastosowania pewnego rodzaju systemu moderacji danych wprowadzanych przez użytkowników, co prawdopodobnie zaowocuje utworzeniem dodatkowych poziomów dostępu.
+
 ##### Architektura
 
 Pierwszą i podstawową planowaną postacią oprogramowania jest aplikacja mobilna na system operacyjny Android w wersji 4.0 lub nowszej. Projekt zakłada możliwość dobudowania aplikacji przeglądarkowej, na desktopowe systemy operacyjne oraz inne urządzenia mobilne.
@@ -24,15 +30,14 @@ Uzupełnianie bazy o aktualne informacje ma być zadaniem użytkowników, podobn
 
 ##### Wymagania funkcjonalne
 
-- Użytkownik musi mieć dostęp do prostych narzędzi rysowania, w celu zaznaczenia przybliżonej lokalizacji gniazdka eletkrycznego.
-- Użytkownik powinien być w stanie sprawdzić dostępne gniazdka elektryczne w pobliżu swojej lokalizacji.
-- Użytkownik powinien mieć możliwość oceny dodanego już gniazdka oraz dodania komentarza opisującego problem w przypadku
-wystawienia negatywnej oceny.
-- Użytkownik powinien być w stanie łatwo edytować informacje gniazdka w przypadku zmiany położenia lub też zmiany dostępności
-gniazdka.
+* Użytkownik może zobaczyć mapę swojego otoczenia lub dowolnego miejsca na świecie, wraz z umieszczonymi na niej znacznikami miejsc z dostępem do gniazdek elektrycznych
+* Użytkownik może wyszukać dowolne miejsce na świecie i zobaczyć, czy są tam opisane lokalizacje gniazdek
+* Aplikacja umożliwia użytkownikowi przegląd informacji na temat umieszczonego na mapie znacznika z lokalizacją gniazdek, tj. np. nazwy miejsca (jeśli adekwatne), krótkiego opisu, autorów (osób, które te informacje wprowadziły) oraz schematycznego szkicu rozmiesczenia gniazdek elektrycznych w opisywanym miejscu
+* Użytkownik może dodawać nowe informacje o rozmieszczeniu gniazdek oraz edytować istniejące, bezpośrednio w aplikacji
+* Aplikacja udostępnia proste narzędzia rysowania w celu zaznaczenia przybliżonych lokalizacji gniazdek eletkrycznych w budynkach i miejscach publicznych
+* Użytkownik powinien mieć możliwość pozytywnej lub negatywnej oceny dodanego już znacznika z lokalizacją gniazdek oraz dodania komentarza opisującego ewentualne problemy
 
-##### Wymagania niefunkcjonalne 
+##### Wymagania niefunkcjonalne
 
-- Aplikacja powinien pracować na systemie mobilnym (android), z nowoczesnym graficznym interfejsem użytkownika.
-- Aplikacja powinna być rozbudowywalna, docelowo możliwość rozszerzenia o wersję webową.
-
+* Aplikacja powinien pracować na systemie mobilnym (android), z nowoczesnym graficznym interfejsem użytkownika.
+* Aplikacja powinna być rozbudowywalna, docelowo możliwość rozszerzenia o wersję webową.
