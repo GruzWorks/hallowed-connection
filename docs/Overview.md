@@ -16,7 +16,7 @@ Na dalszym etapie rozwoju aplikacji przewidywana jest konieczność zastosowania
 
 ##### Architektura
 
-Pierwszą i podstawową planowaną postacią oprogramowania jest aplikacja mobilna na system operacyjny Android w wersji 4.0 lub nowszej. Projekt zakłada możliwość dobudowania aplikacji przeglądarkowej, na desktopowe systemy operacyjne oraz inne urządzenia mobilne.
+Pierwszą i podstawową planowaną postacią oprogramowania jest aplikacja mobilna na system operacyjny Android w wersji 4.0 lub nowszej. Projekt zakłada możliwość dobudowania aplikacji przeglądarkowej, na desktopowe systemy operacyjne oraz inne urządzenia mobilne. System dostarczający projektowaną funkcjonalność powinien zostać zaimplementowany w architekturze klient-serwer, gdzie serwer jest autorytatywnym punktem dostępu do danych.
 
 Pojedynczy schemat rozmieszczenia gniazdek reprezentowany jest przez nazwę części budynku, którą przedstawia, piętro, które opisuje, przesunięcie lokalizacji na mapie względem głównego węzła budynku, unikalny identyfikator reprezentacji graficznej schematu oraz autora - użytkownika, który dodał schemat do systemu.
 
@@ -41,3 +41,7 @@ Uzupełnianie bazy o aktualne informacje ma być zadaniem użytkowników, podobn
 
 * Aplikacja powinien pracować na systemie mobilnym (android), z nowoczesnym graficznym interfejsem użytkownika.
 * Aplikacja powinna być rozbudowywalna, docelowo możliwość rozszerzenia o wersję webową.
+
+##### Zabezpieczenia
+
+Dane udostępniane przez aplikację powinny być zabezpieczone odpowiednio do swojej istotności w systemie. Dane dostępne dla każdego użytkownika, takie, jak na przykład miejsca z lokalizacją gniazdek, nie wymagają specjalnego traktowania, jednak dane przeznaczone tylko dla administratorów wymagają rygorystycznej kontroli dostępu. Niezależnie od dostępu użytkowników do danych, podczas komunikacji użytkownika (za pośrednictwem aplikacji klienckiej) z serwerem, żadne osoby postronne nie powinny mieć możliwości odczytania ani modyfikacji danych przesyłanych ani odbieranych przez użytkownika. Z tego powodu konieczna jest implementacja szyfrowania kanału wymiany informacji.
