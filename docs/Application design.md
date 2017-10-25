@@ -1,4 +1,5 @@
-
+# Project Hallowed Connection
+## Application design
 
 ### Opis biznesowy
 
@@ -14,7 +15,11 @@ Aplikacja ma być dostępna do powszechnego użytku przez dowolne osoby, w dowol
 
 Na dalszym etapie rozwoju aplikacji przewidywana jest konieczność zastosowania pewnego rodzaju systemu moderacji danych wprowadzanych przez użytkowników, co prawdopodobnie zaowocuje utworzeniem dodatkowych poziomów dostępu.
 
-##### Architektura
+##### Przepisy
+
+Uzupełnianie bazy o aktualne informacje ma być zadaniem użytkowników, podobnie jak wiki.
+
+### Architektura
 
 Pierwszą i podstawową planowaną postacią oprogramowania jest aplikacja mobilna na system operacyjny Android w wersji 4.0 lub nowszej. Projekt zakłada możliwość dobudowania aplikacji przeglądarkowej, na desktopowe systemy operacyjne oraz inne urządzenia mobilne. System dostarczający projektowaną funkcjonalność powinien zostać zaimplementowany w architekturze klient-serwer, gdzie serwer jest autorytatywnym punktem dostępu do danych.
 
@@ -23,10 +28,6 @@ Pojedynczy schemat rozmieszczenia gniazdek reprezentowany jest przez nazwę czę
 Schematy rozmieszczenia gniazdek grupowane są w budynki, które z kolei opisane są przez nazwę, lokalizację geograficzną i opcjonalnie adres.
 
 Niektóre budynki są zbyt małe (lub ich ogólnodostępna część jest zbyt mała), aby dzielić je na części i przechowywać osobne schematy. W takim wypadku do budynku przypisany jest tylko jeden schemat o pustej nazwie, a aplikacja od razu wyświetla ten schemat bezpośrednio po wybraniu budynku.
-
-##### Przepisy
-
-Uzupełnianie bazy o aktualne informacje ma być zadaniem użytkowników, podobnie jak wiki.
 
 ##### Wymagania funkcjonalne
 
