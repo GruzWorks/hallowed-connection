@@ -11,13 +11,23 @@ Baza lokalizacji gniazdek wraz ze schematami powinna być powiększana przez uż
 
 ##### Zasoby ludzkie
 
-Aplikacja ma być dostępna do powszechnego użytku przez dowolne osoby, w dowolnym miejscu na świecie. Zwykli użytkownicy nie mogą mieć dostępu do administracyjnych funkcjonalności aplikacji - te mają być zarezerwowane dla twórców i osób specjalnie przez nich wyznaczonych.
+Dostęp do funkcjonalności aplikacji powinien być podzielony na poziomy uprawnień, w skład których, według początkowych założeń, mają wchodzić: Użytkownik, Moderator, Administrator.
 
-Na dalszym etapie rozwoju aplikacji przewidywana jest konieczność zastosowania pewnego rodzaju systemu moderacji danych wprowadzanych przez użytkowników, co prawdopodobnie zaowocuje utworzeniem dodatkowych poziomów dostępu.
+Użytkownicy to grupa złożona ze wszystkich osób, które korzystają z aplikacji. Po pobraniu i zainstalowaniu aplikacji z oficjalnego repozytorium dla odpowiedniej platformy lub ze strony internetowej twórców, mogą z niej korzystać dowolne osoby, w dowolnym miejscu na świecie. Za dostęp do aplikacji nie są pobierane opłaty.
+
+Moderatorzy są specjalnie wyselekcjonowaną grupą użytkowników, do których twórcy aplikacji mają dostatecznie dużo zaufania, aby powierzyć im moderację treści zamieszczanych przez Użytkowników w systemie aplikacji.
+
+Administratorzy to twórcy aplikacji oraz nieliczne osoby przez nich wyznaczone. Administratorzy mają niemal nieograniczoną kontrolę nad pracą systemu i treściami zamieszczanymi przez Użytkowników.
+
+Podstawowe funkcjonalności aplikacji - przeglądanie mapy oraz schematów lokalizacji gniazdek, dodawanie nowych informacji o lokalizacji gniazdek, modyfikacja istniejących danych, dodawanie opinii nt. istniejących znaczników - mają być dostępne dla wszystkich Użytkowników, z zastrzeżeniem ochrony przed wandalizmem, głównie za pomocą moderacji społecznościowej.
+
+Tylko Moderatorzy i Administratorzy mają mieć możliwość wprowadzania zmian w informacjach przechowywanych w systemie z pominięciem moderacji, a także arbitralnej akceptacji lub odrzucania zmian proponowanych przez Użytkowników.
+
+Tylko Administratorzy mają mieć wpływ na techniczną stronę funkcjonowania systemu (tzw. back end), dostęp Użytkowników do aplikacji (np. blokowanie osób o niepożądanym wpływie na dane) i inne aspekty 'zaplecza' systemu.
 
 ##### Przepisy
 
-Uzupełnianie bazy o aktualne informacje ma być zadaniem użytkowników, podobnie jak wiki.
+Uzupełnianie bazy o aktualne informacje ma być zadaniem użytkowników, podobnie jak w przypadku edycji artykułów wiki.
 
 ### Architektura
 
