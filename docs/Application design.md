@@ -53,8 +53,8 @@ Niektóre budynki są zbyt małe (lub ich ogólnodostępna część jest zbyt ma
 
 ##### Wymagania niefunkcjonalne
 
-* Aplikacja powinien pracować na systemie mobilnym (android), z nowoczesnym graficznym interfejsem użytkownika.
-* Aplikacja powinna być rozbudowywalna, docelowo możliwość rozszerzenia o wersję webową.
+* Aplikacja powinien pracować na mobilnym systemie operacyjnym (Android), z nowoczesnym graficznym interfejsem użytkownika
+* Aplikacja powinna być rozbudowywalna; docelowo powinna mieć możliwość rozszerzenia o wersję webową
 
 ##### Zabezpieczenia
 
