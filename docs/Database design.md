@@ -29,8 +29,8 @@ Projekt aplikacji zakłada również przechowywanie graficznych szkiców lokaliz
 
 #### Wymagania niefunkcjonalne
 
-* Aplikacja powinien pracować na systemie mobilnym (android), z nowoczesnym graficznym interfejsem użytkownika.
-* Aplikacja powinna być rozbudowywalna, docelowo możliwość rozszerzenia o wersję webową.
+* Aplikacja powinien pracować na mobilnym systemie operacyjnym (Android), z nowoczesnym graficznym interfejsem użytkownika
+* Aplikacja powinna być rozbudowywalna; docelowo powinna mieć możliwość rozszerzenia o wersję webową
 
 #### Środowisko produkcyjne
 
@@ -52,7 +52,7 @@ Dane udostępniane przez aplikację powinny być zabezpieczone odpowiednio do s
 
 #### Założenia projektowe
 
-Pojedyńcze gniazdko powinno występować jako encja, w przypadku w którym użytkownik chce wyszukać gniazdko ze specyficzymi parametrami, takie jak napięcie czy też ilość miejsc w jednym gniazdku. Jednak w celu ograniczenia rozmiaru bazy danych, encja ta nie będzie zawierała geolokacji, a tylko współrzędne na schemacie, o ile takowe istnieją.
+Pojedyncze gniazdko powinno występować jako encja, w przypadku w którym użytkownik chce wyszukać gniazdko ze specyficzymi parametrami, takie jak napięcie czy też ilość miejsc w jednym gniazdku. Jednak w celu ograniczenia rozmiaru bazy danych, encja ta nie będzie zawierała geolokacji, a tylko współrzędne na schemacie, o ile takowe istnieją.
 
 #### Założenia techniczne
 
