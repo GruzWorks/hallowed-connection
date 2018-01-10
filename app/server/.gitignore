@@ -1,0 +1,22 @@
+# Local IDE configuration
+.idea/codeStyles/
+.idea/dictionaries/
+.idea/inspectionProfiles/
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+
+# Local IDE generated files
+.idea/libraries/
+.idea/**/uiDesigner.xml
+
+# Sensitive or high-churn files:
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.xml
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+
+# Compiled classes & packages
+out/
+target/
