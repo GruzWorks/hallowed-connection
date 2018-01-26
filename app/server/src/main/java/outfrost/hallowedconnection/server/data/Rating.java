@@ -1,13 +1,14 @@
 package outfrost.hallowedconnection.server.data;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class Rating implements Serializable {
-
+	
+	private long id;
 	private User user;
-	private Timestamp timeCreated;
-	private Timestamp timeModified;
+	private LocalDateTime timeCreated;
+	private LocalDateTime timeModified;
 	private RatingValue value;
 	private String comment;
 	private Building building;
@@ -16,13 +17,22 @@ public class Rating implements Serializable {
 	
 	}
 	
-	public Rating(User user, Timestamp timeCreated, Timestamp timeModified, RatingValue value, String comment, Building building) {
+	public Rating(long id, User user, LocalDateTime timeCreated, LocalDateTime timeModified, RatingValue value, String comment, Building building) {
+		this.id = id;
 		this.user = user;
 		this.timeCreated = timeCreated;
 		this.timeModified = timeModified;
 		this.value = value;
 		this.comment = comment;
 		this.building = building;
+	}
+	
+	public long getId() {
+		return id;
+	}
+	
+	public void setId(long id) {
+		this.id = id;
 	}
 	
 	public User getUser() {
@@ -33,19 +43,19 @@ public class Rating implements Serializable {
 		this.user = user;
 	}
 	
-	public Timestamp getTimeCreated() {
+	public LocalDateTime getTimeCreated() {
 		return timeCreated;
 	}
 	
-	public void setTimeCreated(Timestamp timeCreated) {
+	public void setTimeCreated(LocalDateTime timeCreated) {
 		this.timeCreated = timeCreated;
 	}
 	
-	public Timestamp getTimeModified() {
+	public LocalDateTime getTimeModified() {
 		return timeModified;
 	}
 	
-	public void setTimeModified(Timestamp timeModified) {
+	public void setTimeModified(LocalDateTime timeModified) {
 		this.timeModified = timeModified;
 	}
 	

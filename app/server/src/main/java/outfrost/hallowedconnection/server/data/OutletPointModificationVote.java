@@ -1,20 +1,20 @@
 package outfrost.hallowedconnection.server.data;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class OutletPointModificationVote implements Serializable {
 	
 	private OutletPointModification outletPointModification;
 	private User user;
-	private Timestamp timeCast;
+	private LocalDateTime timeCast;
 	private boolean value;
 	
 	public OutletPointModificationVote() {
 	
 	}
 	
-	public OutletPointModificationVote(OutletPointModification outletPointModification, User user, Timestamp timeCast, boolean value) {
+	public OutletPointModificationVote(OutletPointModification outletPointModification, User user, LocalDateTime timeCast, boolean value) {
 		this.outletPointModification = outletPointModification;
 		this.user = user;
 		this.timeCast = timeCast;
@@ -37,11 +37,11 @@ public class OutletPointModificationVote implements Serializable {
 		this.user = user;
 	}
 	
-	public Timestamp getTimeCast() {
+	public LocalDateTime getTimeCast() {
 		return timeCast;
 	}
 	
-	public void setTimeCast(Timestamp timeCast) {
+	public void setTimeCast(LocalDateTime timeCast) {
 		this.timeCast = timeCast;
 	}
 	

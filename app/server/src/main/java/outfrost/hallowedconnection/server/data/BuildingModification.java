@@ -2,9 +2,11 @@ package outfrost.hallowedconnection.server.data;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class BuildingModification implements Serializable {
 	
+	private long id;
 	private Building building;
 	private User submittedBy;
 	private Timestamp timeSubmitted;
@@ -24,7 +26,8 @@ public class BuildingModification implements Serializable {
 	
 	}
 	
-	public BuildingModification(Building building, User submittedBy, Timestamp timeSubmitted, boolean approved, double latBefore, double latAfter, double lonBefore, double lonAfter, String nameBefore, String nameAfter, String descriptionBefore, String descriptionAfter, BuildingFlags flagsBefore, BuildingFlags flagsAfter) {
+	public BuildingModification(long id, Building building, User submittedBy, Timestamp timeSubmitted, boolean approved, double latBefore, double latAfter, double lonBefore, double lonAfter, String nameBefore, String nameAfter, String descriptionBefore, String descriptionAfter, BuildingFlags flagsBefore, BuildingFlags flagsAfter) {
+		this.id = id;
 		this.building = building;
 		this.submittedBy = submittedBy;
 		this.timeSubmitted = timeSubmitted;
@@ -39,6 +42,14 @@ public class BuildingModification implements Serializable {
 		this.descriptionAfter = descriptionAfter;
 		this.flagsBefore = flagsBefore;
 		this.flagsAfter = flagsAfter;
+	}
+	
+	public long getId() {
+		return id;
+	}
+	
+	public void setId(long id) {
+		this.id = id;
 	}
 	
 	public Building getBuilding() {

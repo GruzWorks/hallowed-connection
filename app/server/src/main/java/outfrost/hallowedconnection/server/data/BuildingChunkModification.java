@@ -1,14 +1,15 @@
 package outfrost.hallowedconnection.server.data;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class BuildingChunkModification implements Serializable {
-
+	
+	private long id;
 	private BuildingChunk buildingChunk;
 	private User submittedBy;
-	private Timestamp timeSubmitted;
+	private LocalDateTime timeSubmitted;
 	private boolean approved;
 	private double latBefore;
 	private double latAfter;
@@ -26,7 +27,8 @@ public class BuildingChunkModification implements Serializable {
 	
 	}
 	
-	public BuildingChunkModification(BuildingChunk buildingChunk, User submittedBy, Timestamp timeSubmitted, boolean approved, double latBefore, double latAfter, double lonBefore, double lonAfter, String nameBefore, String nameAfter, UUID schematicIdBefore, UUID getSchematicIdAfter, BuildingChunkFlags flagsBefore, BuildingChunkFlags flagsAfter, Building building) {
+	public BuildingChunkModification(long id, BuildingChunk buildingChunk, User submittedBy, LocalDateTime timeSubmitted, boolean approved, double latBefore, double latAfter, double lonBefore, double lonAfter, String nameBefore, String nameAfter, UUID schematicIdBefore, UUID getSchematicIdAfter, BuildingChunkFlags flagsBefore, BuildingChunkFlags flagsAfter, Building building) {
+		this.id = id;
 		this.buildingChunk = buildingChunk;
 		this.submittedBy = submittedBy;
 		this.timeSubmitted = timeSubmitted;
@@ -42,6 +44,14 @@ public class BuildingChunkModification implements Serializable {
 		this.flagsBefore = flagsBefore;
 		this.flagsAfter = flagsAfter;
 		this.building = building;
+	}
+	
+	public long getId() {
+		return id;
+	}
+	
+	public void setId(long id) {
+		this.id = id;
 	}
 	
 	public BuildingChunk getBuildingChunk() {
@@ -60,11 +70,11 @@ public class BuildingChunkModification implements Serializable {
 		this.submittedBy = submittedBy;
 	}
 	
-	public Timestamp getTimeSubmitted() {
+	public LocalDateTime getTimeSubmitted() {
 		return timeSubmitted;
 	}
 	
-	public void setTimeSubmitted(Timestamp timeSubmitted) {
+	public void setTimeSubmitted(LocalDateTime timeSubmitted) {
 		this.timeSubmitted = timeSubmitted;
 	}
 	

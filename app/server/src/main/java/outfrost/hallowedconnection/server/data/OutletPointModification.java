@@ -1,13 +1,14 @@
 package outfrost.hallowedconnection.server.data;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class OutletPointModification implements Serializable {
 	
+	private long id;
 	private OutletPoint outletPoint;
 	private User submittedBy;
-	private Timestamp timeSubmitted;
+	private LocalDateTime timeSubmitted;
 	private boolean approved;
 	private int xBefore;
 	private int xAfter;
@@ -25,7 +26,8 @@ public class OutletPointModification implements Serializable {
 	
 	}
 	
-	public OutletPointModification(OutletPoint outletPoint, User submittedBy, Timestamp timeSubmitted, boolean approved, int xBefore, int xAfter, int yBefore, int yAfter, OutletPointType typeBefore, OutletPointType typeAfter, OutletPointFlags flagsBefore, OutletPointFlags flagsAfter, int outletCountBefore, int outletCountAfter, BuildingChunk buildingChunk) {
+	public OutletPointModification(long id, OutletPoint outletPoint, User submittedBy, LocalDateTime timeSubmitted, boolean approved, int xBefore, int xAfter, int yBefore, int yAfter, OutletPointType typeBefore, OutletPointType typeAfter, OutletPointFlags flagsBefore, OutletPointFlags flagsAfter, int outletCountBefore, int outletCountAfter, BuildingChunk buildingChunk) {
+		this.id = id;
 		this.outletPoint = outletPoint;
 		this.submittedBy = submittedBy;
 		this.timeSubmitted = timeSubmitted;
@@ -41,6 +43,14 @@ public class OutletPointModification implements Serializable {
 		this.outletCountBefore = outletCountBefore;
 		this.outletCountAfter = outletCountAfter;
 		this.buildingChunk = buildingChunk;
+	}
+	
+	public long getId() {
+		return id;
+	}
+	
+	public void setId(long id) {
+		this.id = id;
 	}
 	
 	public OutletPoint getOutletPoint() {
@@ -59,11 +69,11 @@ public class OutletPointModification implements Serializable {
 		this.submittedBy = submittedBy;
 	}
 	
-	public Timestamp getTimeSubmitted() {
+	public LocalDateTime getTimeSubmitted() {
 		return timeSubmitted;
 	}
 	
-	public void setTimeSubmitted(Timestamp timeSubmitted) {
+	public void setTimeSubmitted(LocalDateTime timeSubmitted) {
 		this.timeSubmitted = timeSubmitted;
 	}
 	

@@ -4,7 +4,8 @@ import java.io.Serializable;
 import java.util.UUID;
 
 public class BuildingChunk implements Serializable {
-
+	
+	private long id;
 	private Building building;
 	private double lat;
 	private double lon;
@@ -17,7 +18,8 @@ public class BuildingChunk implements Serializable {
 	
 	}
 	
-	public BuildingChunk(Building building, double lat, double lon, String name, BuildingChunkFlags flags, UUID schematicId, int outletCount) {
+	public BuildingChunk(long id, Building building, double lat, double lon, String name, BuildingChunkFlags flags, UUID schematicId, int outletCount) {
+		this.id = id;
 		this.building = building;
 		this.lat = lat;
 		this.lon = lon;
@@ -25,6 +27,14 @@ public class BuildingChunk implements Serializable {
 		this.flags = flags;
 		this.schematicId = schematicId;
 		this.outletCount = outletCount;
+	}
+	
+	public long getId() {
+		return id;
+	}
+	
+	public void setId(long id) {
+		this.id = id;
 	}
 	
 	public Building getBuilding() {

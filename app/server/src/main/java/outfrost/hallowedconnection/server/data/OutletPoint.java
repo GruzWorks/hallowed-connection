@@ -3,7 +3,8 @@ package outfrost.hallowedconnection.server.data;
 import java.io.Serializable;
 
 public class OutletPoint implements Serializable {
-
+	
+	private long id;
 	private BuildingChunk buildingChunk;
 	private int x;
 	private int y;
@@ -15,13 +16,22 @@ public class OutletPoint implements Serializable {
 	
 	}
 	
-	public OutletPoint(BuildingChunk chunk, int x, int y, OutletPointType type, OutletPointFlags flags, int outletCount) {
+	public OutletPoint(long id, BuildingChunk chunk, int x, int y, OutletPointType type, OutletPointFlags flags, int outletCount) {
+		this.id = id;
 		buildingChunk = chunk;
 		this.x = x;
 		this.y = y;
 		this.type = type;
 		this.flags = flags;
 		this.outletCount = outletCount;
+	}
+	
+	public long getId() {
+		return id;
+	}
+	
+	public void setId(long id) {
+		this.id = id;
 	}
 	
 	public BuildingChunk getBuildingChunk() {

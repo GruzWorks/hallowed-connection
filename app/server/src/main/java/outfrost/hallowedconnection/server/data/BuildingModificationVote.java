@@ -1,20 +1,20 @@
 package outfrost.hallowedconnection.server.data;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 public class BuildingModificationVote implements Serializable {
 	
 	private BuildingModification buildingModification;
 	private User user;
-	private Timestamp timeCast;
+	private LocalDateTime timeCast;
 	private boolean value;
 	
 	public BuildingModificationVote() {
 	
 	}
 	
-	public BuildingModificationVote(BuildingModification buildingModification, User user, Timestamp timeCast, boolean value) {
+	public BuildingModificationVote(BuildingModification buildingModification, User user, LocalDateTime timeCast, boolean value) {
 		this.buildingModification = buildingModification;
 		this.user = user;
 		this.timeCast = timeCast;
@@ -37,11 +37,11 @@ public class BuildingModificationVote implements Serializable {
 		this.user = user;
 	}
 	
-	public Timestamp getTimeCast() {
+	public LocalDateTime getTimeCast() {
 		return timeCast;
 	}
 	
-	public void setTimeCast(Timestamp timeCast) {
+	public void setTimeCast(LocalDateTime timeCast) {
 		this.timeCast = timeCast;
 	}
 	

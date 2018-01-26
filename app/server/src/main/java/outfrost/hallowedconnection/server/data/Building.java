@@ -2,23 +2,27 @@ package outfrost.hallowedconnection.server.data;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.EnumSet;
 
 public class Building implements Serializable {
 	
+	private long id;
 	private double lat;
 	private double lon;
 	private String name;
 	private String description;
 	private User submittedBy;
 	private Timestamp timeSubmitted;
-	private BuildingFlags flags;
+	private EnumSet<BuildingFlags> flags;
 	private int outletCount;
 	
 	public Building() {
 	
 	}
 	
-	public Building(double lat, double lon, String name, String description, User submittedBy, Timestamp timeSubmitted, BuildingFlags flags, int outletCount) {
+	public Building(long id, double lat, double lon, String name, String description, User submittedBy, Timestamp timeSubmitted, EnumSet<BuildingFlags> flags, int outletCount) {
+		this.id = id;
 		this.lat = lat;
 		this.lon = lon;
 		this.name = name;
@@ -27,6 +31,14 @@ public class Building implements Serializable {
 		this.timeSubmitted = timeSubmitted;
 		this.flags = flags;
 		this.outletCount = outletCount;
+	}
+	
+	public long getId() {
+		return id;
+	}
+	
+	public void setId(long id) {
+		this.id = id;
 	}
 	
 	public double getLat() {
@@ -77,11 +89,11 @@ public class Building implements Serializable {
 		this.timeSubmitted = timeSubmitted;
 	}
 	
-	public BuildingFlags getFlags() {
+	public EnumSet<BuildingFlags> getFlags() {
 		return flags;
 	}
 	
-	public void setFlags(BuildingFlags flags) {
+	public void setFlags(EnumSet<BuildingFlags> flags) {
 		this.flags = flags;
 	}
 	
@@ -92,4 +104,5 @@ public class Building implements Serializable {
 	public void setOutletCount(int outletCount) {
 		this.outletCount = outletCount;
 	}
+	
 }
