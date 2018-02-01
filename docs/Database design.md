@@ -1,5 +1,5 @@
 # Bazy Danych 2
-## Projekt
+### Projekt
 
 ## Hallowed Connection
 _Aplikacja do wyszukiwania punktów z dostępem do energii elektrycznej_
@@ -9,43 +9,31 @@ Uczestnicy							| Prowadzący			| Termin zajęć
 Szymon Abramski<br />Iwo Bujkiewicz	| Dr inż. Roman Ptak	| Poniedziałek 13:15
 
 1. Wstęp
-
 	1. Cel projektu
 	1. Zakres projektu
-
 1. Analiza wymagań
-
 	1. Wymagania funkcjonalne
 	1. Wymagania niefunkcjonalne
-
 		1. Wykorzystywane technologie i narzędzia
 		1. Wymagania dotyczące rozmiaru bazy danych
 		1. Wymagania dotyczące bezpieczeństwa systemu
-
+		1. Szacowane obciążenie
 	1. Przyjęte założenia projektowe
-
 1. Projekt systemu
-
 	1. Projekt bazy danych
-
 		1. Analiza rzeczywistości i uproszczony model konceptualny
 		1. Model logiczny i normalizacja
 		1. Model fizyczny i ograniczenia integralności danych
 		1. Inne modele schematu - elementy przetwarzania danych
-
 	1. Projekt aplikacji użytkownika
-
 		1. Architektura aplikacji i diagramy projektowe
 		1. Projekt wybranych funkcji systemu
 		1. Projekt zabezpieczeń na poziomie aplikacji
-
 1. Implementacja systemu bazy danych
-
 	 1. Tworzenie tabel i definiowanie ograniczeń
 	 1. Implementacja mechanizmów przetwarzania danych
 	 1. Implementacja uprawnień i innych ograniczeń
 	 1. Testowanie bazy danych na przykładowych danych.
-
 1. Podsumowanie i wnioski
 1. Literatura
 
@@ -87,7 +75,7 @@ Należało zaprojektować i zaimplementować bazę danych odpowiednią do przech
 Za system bazodanowy projektowanej usługi posłuży PostgreSQL, z którego instancją łączyć się będzie, za pośrednictwem JDBC, aplikacja serwerowa napisana w języku Java 9. Do dyspozycji użytkowników będzie aplikacja kliencka napisana w języku Java 8, projektowana na system operacyjny Android 7.1.2 i docelowo kompatybilna przynajmniej ze wszystkimi wersjami systemu Android od 5.0.1 wzwyż.
 
 <div class="page-break"></div>
-
+	
 ##### 2.2.2. Wymagania dotyczące rozmiaru bazy danych
 
 Baza danych musi przechowywać dane geoprzestrzenne z dołączonymi
@@ -98,6 +86,10 @@ Biorąc pod uwagę ewentualne nieprzewidziane tutaj rodzaje przechowywanych info
 ##### 2.2.3. Wymagania dotyczące bezpieczeństwa systemu
 
 Dane udostępniane przez aplikację powinny być zabezpieczone odpowiednio do swojej istotności w systemie. Dane dostępne dla każdego użytkownika, takie, jak na przykład miejsca z lokalizacją gniazdek, nie wymagają specjalnego traktowania, jednak dane przeznaczone tylko dla administratorów wymagają rygorystycznej kontroli dostępu. Niezależnie od dostępu użytkowników do danych, podczas komunikacji użytkownika (za pośrednictwem aplikacji klienckiej) z serwerem, żadne osoby postronne nie powinny mieć możliwości odczytania ani modyfikacji danych przesyłanych ani odbieranych przez użytkownika. Z tego powodu konieczna jest implementacja szyfrowania kanału wymiany informacji.
+
+##### 2.2.4. Szacowane obciążenie
+
+W początkowych fazach rozwoju systemu szacowane jest stosunkowo niewielkie obciążenie, jednak projekt zakłada znaczny wzrost ruchu pochodzącego od użytkowników w miarę upływu czasu. W perspektywie czasu życia bazy danych, tj. 2-4 lat, można oczekiwać zainteresowania ze strony 1000 użytkowników dziennie, co generuje około 10000 żądań aplikacji.
 
 #### 2.3. Przyjęte założenia projektowe
 
@@ -160,6 +152,8 @@ Aplikacja z założenia jest tylko niewielką częścią całego projektu, dlate
 
 W zależności od poziomu uprawnień użytkownika ilość dostępnych funkcji różni się. Z poziomu sesji anonimowej, użytkownik ma prawo jedynie do przeglądania gniazdek. W sesji użytkownika, jest możliwe dodatkowo ocenianie przeglądanych gniazdek, dodawanie nowych, a także edytowanie już wprowadzonych i głosowanie nad wprowadzeniem zmian. Każdej operacji związanej z punktami dostępowymi towarzyszy łączenie aplikacji do api Google Maps, w celu wyświetlenie żądanej przez użytkownika lokalizacji, na podstawie danych geoprzestrzennych. Dodawaniu nowego gniazdka towarzyszy wywołanie zaimplementowanego narzędzia do rysowania prostych schematów, w celu określenia przybliżonej lokalizacji gniazdka.
 
+<br /><br />
+
 ![Use case diagram](images/Use%20Case%20Diagram1.jpg)
 _Diagram przypadków użycia reprezentujący działanie aplikacji_
 
@@ -175,6 +169,8 @@ _Diagram czynności przedstawiający wyszukiwanie gniazdka_
 
 ![Activity diagram](images/Show%20outlet%20information.jpg)
 _Diagram czynności przedstawiający wyświetlanie informacji o gniazdku_
+
+<br /><br /><br /><br /><br /><br />
 
 ![Activity diagram](images/Add%20new%20outlet%20information.jpg)
 _Diagram czynności przedstawiający dodawanie nowego gniazdka_
@@ -319,14 +315,24 @@ void getBuilding() throws SQLException, ClassNotFoundException {
 }
 ```
 
+<div class="page-break"></div>
+
 ### 5. Podsumowanie i wnioski
 
-Zaprojektowany system jest w pełni użytkowalny i działa z myślą o rozwiązaniu problemów z rozładowaną baterią urządzeń mobilnych. System ma być z założenia głównie rozwijany przez jego użytkowników, a jego szybkość rozwoju systemu jest proporcjonalna do ilości użytkowników. Docelowo aplikacja ma być rozwijana i poprawiana przez deweloperów, jest w planach stworzenie aplikacji desktopowej, jako alternatywy dla dostępnej aktualne wersji mobilnej.
+Zaprojektowany został system pozwalający na wydajne przechowywanie i przeszukiwanie informacji na temat publicznych punktów z dostępem do energii elektrycznej, co po ukończeniu prac nad aplikacją dostępową ułatwi użytkownikom rozwiązanie problemu rozładowanej baterii w ich urządzeniach mobilnych. System jest przygotowany do powiększania zbioru przechowywanych informacji przez wszystkich użytkowników, głównie dzięki zachowywaniu historii wszystkich zmian dokonywanych na publicznie edytowalnych danych, a także dzięki przystosowaniu bazy danych do społecznościowej moderacji wprowadzanych treści. Warto przy tym zauważyć, że historia zmian mogłaby być przechowywana w tabelach danych bieżących, co wyeliminowałoby konieczność duplikowania tabel. Taka organizacja systemu jest jednak niepożądana, gdyż spowodowałaby znaczne spowolnienie wyszukiwania aktualnych informacji (a to, z kolei, zważywszy na charakter aplikacji, znacznie obniżyłoby jej wartość użytkową).
 
-Najważniejsze w fazie projektowania jest wybór odpowiednich narzędzi do stworzenia systemu, należy przewidzieć obciążenie bazy danych, czyli ilość zapytań w ciągu dnia. Programowanie na podstawie narysowanych wcześniej diagramów i modeli pozwala uniknąć pomyłek i konieczności większych zmian.
+System ma zostać zbudowany oraz docelowo rozwijany i poprawiany przez developerów, ale także przez dowolne osoby z umiejętnościami programistycznymi, które zdecydują się poświęcić temu przedsięwzięciu trochę swojego czasu. System jest bowiem projektowany jako inicjatywa _open source_.
+
+Stworzenie szczegółowego projektu przed przystąpieniem do implementacji baz danych i oprogramowania jest bardzo ważną częścią procesu tworzenia oprogramowania oraz usług online, ponieważ pozwala uniknąć wielu problemów wynikających z początkowych niedopatrzeń, zauważanych wraz z biegiem fazy projektowania. Nie jest jednak użyteczne tworzenie projektu zbyt szczegółowego, gdyż w takiej sytuacji spędza się bardzo dużo czasu na dopracowywaniu szczegółów implementacyjnych przed faktyczną implementacją. Aby cały proces przebiegał możliwie najsprawniej i bez kosztownych potknięć, należy znaleźć równowagę w szczegółowości fazy projektowania.
 
 ### 6. Literatura
 
+1. _PostgreSQL 10.1 Documentation_ (The PostgreSQL Global Development Group, 1996-2017) (https://www.postgresql.org/docs/10/static/index.html)
+
+1. _Java™ Platform, Standard Edition 9 API Specification_ (Oracle America, Inc., September 2017) (https://docs.oracle.com/javase/9/docs/api/)
+
+1. _The PostgreSQL JDBC Interface_ (The PostgreSQL Global Development Group, 1996-2017) (https://jdbc.postgresql.org/documentation/head/index.html)
+
 1. Ben-Gan, I., 2016. _T-SQL Fundamentals Third Edition_ (MSPress, 2016)
 
-1. Various, 2008-2017. _Stack Overflow_ (https://stackoverflow.com)
+1. _Stack Overflow_ (2008-2018) (https://stackoverflow.com)
